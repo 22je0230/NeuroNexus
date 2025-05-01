@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import FormHeader from "@/components/FormHeader";
 import FormField from "@/components/FormField";
 import { toast } from "@/components/ui/use-toast";
+import "../styles/background-animation.css";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -34,9 +35,9 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-indigo-50 py-12 px-4 sm:px-6 flex justify-center">
+    <div className="background-animation min-h-screen py-12 px-4 sm:px-6 flex justify-center">
       <div className="w-full max-w-2xl">
-        <Card className="bg-white shadow-lg rounded-xl overflow-hidden">
+        <Card className="glassmorphic-card bg-white/80 backdrop-blur-md shadow-lg rounded-xl overflow-hidden border border-white/20">
           <FormHeader />
           
           <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-6">
@@ -127,7 +128,7 @@ const Index = () => {
             <div className="pt-4">
               <button
                 type="submit"
-                className="w-full bg-indigo-600 text-white py-3 px-4 rounded-lg font-medium transition-all duration-200 hover:bg-indigo-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="w-full pulse-button bg-gradient-to-r from-indigo-600 to-violet-500 text-white py-3 px-4 rounded-lg font-medium transition-all duration-300 hover:from-indigo-500 hover:to-violet-400 hover:shadow-xl hover:shadow-indigo-300/30 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Submit
               </button>
