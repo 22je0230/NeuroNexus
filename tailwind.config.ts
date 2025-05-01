@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -84,13 +85,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'button-pulse': {
+					'0%, 100%': { 
+						transform: 'scale(1)',
+						boxShadow: '0 0 0 0 rgba(99, 102, 241, 0.7)' 
+					},
+					'50%': { 
+						transform: 'scale(1.03)',
+						boxShadow: '0 0 0 5px rgba(99, 102, 241, 0)' 
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'button-pulse': 'button-pulse 2s infinite'
 			}
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+
