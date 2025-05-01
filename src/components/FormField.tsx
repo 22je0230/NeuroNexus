@@ -59,6 +59,10 @@ const FormField = ({
           />
         );
       case "select":
+        // Filter out placeholder options for the SelectContent
+        const selectOptions = options.filter(option => option.value !== "");
+        const placeholderOption = options.find(option => option.value === "");
+        
         return (
           <Select
             name={name}
@@ -72,10 +76,10 @@ const FormField = ({
             required={required}
           >
             <SelectTrigger className="w-full">
-              <SelectValue placeholder={placeholder || "Select an option"} />
+              <SelectValue placeholder={placeholderOption?.label || placeholder || "Select an option"} />
             </SelectTrigger>
             <SelectContent>
-              {options.map((option) => (
+              {selectOptions.map((option) => (
                 <SelectItem
                   key={option.value}
                   value={option.value}

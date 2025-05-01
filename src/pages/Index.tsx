@@ -99,8 +99,9 @@ const Index = () => {
               value={formData.department}
               onChange={handleChange}
               required
+              placeholder="Select Department"
               options={[
-                { value: "", label: "Select Department", disabled: true },
+                { value: "placeholder", label: "Select Department", disabled: true },
                 { value: "HR", label: "HR" },
                 { value: "Sales", label: "Sales" },
                 { value: "Development", label: "Development" },
